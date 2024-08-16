@@ -78,7 +78,7 @@ function App() {
       <Routes>
         <Route path="/" element={<WithNavbar />}>
           <Route index element={<LandingPage />} />
-          <Route path="HomeIN" element={<Home />} />
+          <Route path="/HomeIN" element={<Home />} />
         
           <Route path="Cart" element={<Cart />} />
           <Route path="TrainingPage" element={<TrainingPage />} />

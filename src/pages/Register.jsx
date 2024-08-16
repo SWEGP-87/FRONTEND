@@ -580,6 +580,8 @@ import styled from "styled-components";
 import { FaUser, FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import video from "../assets/catV.mp4";
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const Container = styled.div`
   width: 100%;
@@ -746,12 +748,44 @@ const Error = styled.span`
   margin-top: 10px;
 `;
 
-const Register = () => {
+
+
+
+const RegisterForm = () => {
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
+
+  const navigate = useNavigate();
+
+
   const togglePassword = () => setShowPassword(prev => !prev);
   const toggleConfirmPassword = () => setShowConfirmPassword(prev => !prev);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:3000/register', {
+        name: username,
+        password,
+        email,
+      });
+
+      if (response.status === 200) {
+        // Handle successful registration
+        console.log('User registered:', response.data);
+        navigate('/HomeIN')
+      } else {
+        // Handle errors
+        console.error('Error registering user:', response.data.message);
+      }
+    } catch (error) {
+      console.error('Error:', error.response ? error.response.data : error.message);
+    }
+  };
 
   return (
     <Container>
@@ -761,7 +795,7 @@ const Register = () => {
       </BackgroundVideo>
       <Wrapper>
         <Title>CREATE AN ACCOUNT</Title>
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <InputRow>
             <InputBox>
               <Input placeholder="First Name" />
@@ -773,15 +807,26 @@ const Register = () => {
             </InputBox>
           </InputRow>
           <InputBox fullWidth>
-            <Input placeholder="Username" />
+            <Input
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
             <Icon><FaUser /></Icon>
           </InputBox>
           <InputBox fullWidth>
-            <Input placeholder="Email" type="email" />
+            <Input
+              placeholder="Email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
             <Icon><FaEnvelope /></Icon>
           </InputBox>
           <InputBox fullWidth>
             <Input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               type={showPassword ? 'text' : 'password'}
               placeholder="Create Password"
             />
@@ -792,6 +837,8 @@ const Register = () => {
           </InputBox>
           <InputBox fullWidth>
             <Input
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
               type={showConfirmPassword ? 'text' : 'password'}
               placeholder="Confirm Password"
             />
@@ -806,18 +853,18 @@ const Register = () => {
               Remember me
             </label>
             <LinkStyled to="#">
-              <Terms$ConditionsText>Terms & Conditions</Terms$ConditionsText>
+              
             </LinkStyled>
           </RememberMeContainer>
           <LinkStyled to="/login">
             Already have an account? <RegisterText>Sign In</RegisterText>
           </LinkStyled>
-          <Button type="submit">CREATE</Button>
+          <Button type="submit">CREATE NEW ACCOUNT</Button>
         </Form>
       </Wrapper>
     </Container>
   );
-};
+}
+;
 
-export default Register;
-
+export default RegisterForm;
