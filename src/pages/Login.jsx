@@ -104,6 +104,8 @@ import React, { useState } from 'react';
 import styled from "styled-components";
 import { FaUser, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom for navigation
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; 
 
 const Container = styled.div`
   width: 100vw;
@@ -254,23 +256,60 @@ const Error = styled.span`
 `;
 
 const Login = () => {
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);  
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+
+  const navigate = useNavigate();
 
   const togglePassword = () => setShowPassword(prev => !prev);
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:3000/login', {
+        name,
+        email,
+        password,
+      });
+
+      if (response.status === 200) {
+        // Handle successful login and redirect to homepage or dashboard
+        console.log('User logged in:', response.data);
+        navigate('/HomeIN'); // Redirect to homepage
+
+      } else {
+        // Handle errors
+        console.error('Error logging in:', response.data.message);
+      }
+
+    } catch (error) {
+      console.error('Error:', error.response ? error.response.data : error.message);
+    }
+  };
 
   return (
     <Container>
       <Wrapper>
         <Title>Sign In</Title>
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <InputBox>
-            <Input placeholder="Username or Email" />
+            <Input placeholder="Username or Email" 
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+            />
             <Icon><FaUser /></Icon>
           </InputBox>
           <InputBox>
             <Input
               placeholder="Password"
               type={showPassword ? 'text' : 'password'}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <Icon><FaLock /></Icon>
             <ToggleIcon onClick={togglePassword}>
