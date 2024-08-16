@@ -7,7 +7,7 @@ import Login from './pages/Login';
 import Cart from "./pages/Cart";
 import TrainingPage from "./pages/TrainingPage";
 import LandingPage from './pages/LandingPage';
-
+import BlogPage from './pages/BlogPage';
 
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -31,7 +31,8 @@ function App() {
         <Route path="/Register" element={<Register />} />
         <Route path="/TrainingPage" element={<TrainingPage />} />
         <Route path="/ProductList" element={< ProductList />} />
-        
+        <Route path="/BlogPage" element={< BlogPage />} />
+
       </Routes>
     </Router>
 
