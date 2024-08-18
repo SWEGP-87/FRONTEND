@@ -296,7 +296,7 @@ const Login = () => {
     <Container>
       <Wrapper>
         <Title>Sign In</Title>
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} >
           <InputBox>
             <Input placeholder="Username or Email" 
                 value={name}
