@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> cb4b895fa7be573bc781445971b88d8ad6284e33
 import React, { useState } from "react";
 import { Badge, Drawer, IconButton, Button, Avatar } from "@material-ui/core";
 import { Search, ShoppingCartOutlined, Menu, Close } from "@material-ui/icons";
@@ -161,13 +168,15 @@ const Navbar = () => {
       </AnnouncementContainer>
       <Container>
         <Left>
-          <SearchContainer>
+          {/* <SearchContainer>
             <Input placeholder="Search" />
             <Search style={{ color: "", fontSize: 16 }} />
-          </SearchContainer>
+          </SearchContainer> */}
+
+<Logo>MANNALAND FARMS</Logo>
         </Left>
         <Center>
-          <Logo>MANNALAND FARMS</Logo>
+         
         </Center>
         <Right>
           <Link to="/" style={{ textDecoration: 'none' }}>
