@@ -1,0 +1,39 @@
+.blog-header {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featured-post {
+  position: relative;
+}
+
+.featured-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.featured-content {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  color: rgb(235, 239, 40);
+  text-align: center;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.author-info img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
