@@ -66,16 +66,9 @@ import Login from './pages/Login';
 import Cart from "./pages/Cart";
 import TrainingPage from "./pages/TrainingPage";
 import LandingPage from './pages/LandingPage';
-<<<<<<< HEAD
-import BlogPage from './pages/BlogPage';
-
-
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-=======
 import ServicePage from './pages/ServicePage';
 import FAQPage from './pages/FAQPage';
 import ContactPage from './pages/ContactPage';
->>>>>>> cb4b895fa7be573bc781445971b88d8ad6284e33
 import Navbar from './components/Navbar';
 import AboutPage from "./pages/AboutPage"
 
@@ -83,20 +76,9 @@ function App() {
   return (
     <Router>
       <Routes>
-<<<<<<< HEAD
-      <Route exact path="/" element={<LandingPage />} />
-      <Route  path="/HomeIN" element={<Home/>} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/Cart" element={<Cart />} />
-        <Route path="/Register" element={<Register />} />
-        <Route path="/TrainingPage" element={<TrainingPage />} />
-        <Route path="/ProductList" element={< ProductList />} />
-        <Route path="/BlogPage" element={< BlogPage />} />
-
-=======
         <Route path="/" element={<WithNavbar />}>
           <Route index element={<LandingPage />} />
-          <Route path="/HomeIN" element={<Home />} />
+          <Route path="HomeIN" element={<Home />} />
         
           <Route path="Cart" element={<Cart />} />
           <Route path="TrainingPage" element={<TrainingPage />} />
@@ -108,7 +90,6 @@ function App() {
         </Route>
         <Route path="/Register" element={<Register />} />
         <Route path="login" element={<Login />} />
->>>>>>> cb4b895fa7be573bc781445971b88d8ad6284e33
       </Routes>
     </Router>
   );

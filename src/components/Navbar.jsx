@@ -1,17 +1,10 @@
-<<<<<<< HEAD
-=======
-
-
-
-
->>>>>>> cb4b895fa7be573bc781445971b88d8ad6284e33
 import React, { useState } from "react";
 import { Badge, Drawer, IconButton, Button, Avatar } from "@material-ui/core";
 import { Search, ShoppingCartOutlined, Menu, Close } from "@material-ui/icons";
 import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 import Announcement from "./Announcement";
-import Ediprofile from "../assets/Ediprofile.png";
+import Ediprofile from "../assets/Ediprofile.png"
 
 const AnnouncementContainer = styled.div`
   position: fixed;
@@ -21,7 +14,7 @@ const AnnouncementContainer = styled.div`
 `;
 
 const Container = styled.div`
-  color: #caf0f8;
+  color: #CAF0F8;
   height: 60px;
   display: flex;
   position: fixed;
@@ -115,7 +108,7 @@ const MenuItem = styled.div`
   cursor: pointer;
   margin-right: 25px;
   padding: 10px;
-  color: #caf0f8;
+  color: #CAF0F8;
 `;
 
 const Navbar = () => {
@@ -146,10 +139,9 @@ const Navbar = () => {
       <Link to="/"> <AnimatedButton>Home</AnimatedButton> </Link>
       <Link to="/cart"> <AnimatedButton> <Badge color="#caf0f8"> <ShoppingCartOutlined /> </Badge> </AnimatedButton> </Link>
       <Link to="/TrainingPage"> <AnimatedButton>Training</AnimatedButton> </Link>
-      <Link to="/BlogPage"> <AnimatedButton>Blog</AnimatedButton> </Link> {/* New Link */}
       {loggedIn ? (
         <>
-          <Link to="/profile"> <AnimatedButton>Profile</AnimatedButton> </Link>
+          <Link to="/profile"> <AnimatedButton>Blog/News</AnimatedButton> </Link>
           <Link to="/"> <AnimatedButton>Logout</AnimatedButton> </Link>
         </>
       ) : (
@@ -189,16 +181,13 @@ const Navbar = () => {
               </Badge>
             </AnimatedButton>
           </Link>
-          <Link to="/TrainingPage" style={{ textDecoration: 'none' }}>
+          <Link to="/TrainingPage" style={{ textDecoration: 'none', color: "red" }}>
             <AnimatedButton style={{ color: "#caf0f8" }}>Training</AnimatedButton>
-          </Link>
-          <Link to="/BlogPage" style={{ textDecoration: 'none' }}> {/* New Link */}
-            <AnimatedButton style={{ color: "#caf0f8" }}>Blog</AnimatedButton>
           </Link>
           {loggedIn ? (
             <>
               <Link to="/profile" style={{ textDecoration: 'none' }}>
-                <AnimatedButton style={{ color: "#caf0f8" }}>Profile</AnimatedButton>
+                <AnimatedButton style={{ color: "#caf0f8" }}>blog/News</AnimatedButton>
               </Link>
               <Link to="/" style={{ textDecoration: 'none' }}>
                 <AnimatedButton style={{ color: "#caf0f8" }}>Logout</AnimatedButton>

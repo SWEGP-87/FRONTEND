@@ -1,6 +1,3 @@
-
-
-
 // import React, { useState } from "react";
 // import { Badge, Drawer, IconButton, Button, Avatar } from "@material-ui/core";
 // import { Search, ShoppingCartOutlined, Menu, Close,Home } from "@material-ui/icons";
