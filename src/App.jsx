@@ -60,7 +60,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Outlet } from 'react-router-dom';
 import ProductList from "./pages/ProductList";
 import Home from './pages/Home';
-import ProductInfo from "./pages/ProductInfo";
+import Products from "./pages/ProductInfo";
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Cart from "./pages/Cart";
@@ -78,18 +78,11 @@ function App() {
       <Routes>
         <Route path="/" element={<WithNavbar />}>
           <Route index element={<LandingPage />} />
-<<<<<<< HEAD
-          <Route path="/HomeIN" element={<Home />} />
-          
-          
-=======
           <Route path="HomeIN" element={<Home />} />
->>>>>>> 3ed560154cf140c32736c8535cac3beb25ed209c
         
           <Route path="Cart" element={<Cart />} />
           <Route path="TrainingPage" element={<TrainingPage />} />
           <Route path="ProductList" element={<ProductList />} />
-          <Route path="product/:id" element={<ProductInfo />} />
           <Route path="ServicePage" element={<ServicePage />} />
           <Route path="FAQPage" element={<FAQPage />} />
           <Route path="ContactPage" element={<ContactPage />} />
