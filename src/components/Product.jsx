@@ -525,6 +525,7 @@ import {
   ShoppingCartOutlined,
 } from "@material-ui/icons";
 import styled from "styled-components";
+import {useState,useEffect} from 'react'
 
 const Container = styled.div`
   display: flex;
@@ -624,14 +625,16 @@ const Icon = styled.div`
 `;
 
 const Product = ({ item }) => {
+  
+    
   return (
     <Container>
       <ImageContainer>
-        <Image src={item.img} alt={item.title} />
+         <Image src={item.image} alt={item.name} />
       </ImageContainer>
       <InfoContainer>
-        <Title>{item.title}</Title>
-        <Desc>{item.desc}</Desc>
+        <Title>{item.name}</Title>
+        <Desc>{item.description}</Desc>
         <Price>${item.price}</Price>
         <IconContainer>
           <Icon>

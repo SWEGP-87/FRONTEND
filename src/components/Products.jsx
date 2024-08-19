@@ -29,6 +29,11 @@
 
 import styled from "styled-components";
 import Product from "./Product";
+import { useState,useEffect } from "react";
+import { Link } from 'react-router-dom';
+
+//import { FixedSizeList as List } from 'react-window';
+
 import { popularProducts } from "../data"; // Assuming you're importing data from a data file
 
 const Container = styled.div`
@@ -50,11 +55,40 @@ const Container = styled.div`
 `;
 
 const Products = () => {
+  const [products, setProducts] = useState([]);
+  
+    useEffect(() => {
+      fetch('http://localhost:3000/products')  // Fetch products from the backend
+      .then(response => response.json())
+      .then(data => {
+        if (Array.isArray(data)) {
+          setProducts(data);
+        } else if (typeof data.products === 'object') {
+          // If data is an object, convert it to an array of values
+          const productArray = Object.values(data.products);
+          setProducts(productArray);
+        } else {
+          console.error('Expected an array or object but got:', data.products);
+          setProducts([]);
+        }
+      })
+      .catch(error => console.error('Error fetching products:', error));
+    }, []);
+  
+    const productElements = products.reduce((acc, item) => {
+      acc.push(
+    <Link to={`/product/${item._id || item.id}`} key={item._id || item.id}>
+      <Product item={item} key={item._id || item.id} />
+     </Link>);
+      return acc;
+    }, []);
   return (
     <Container>
-      {popularProducts.map((item) => (
-        <Product item={item} key={item.id} />
-      ))}
+      {productElements.length > 0 ? (
+        productElements
+      ) : (
+        <p>No products available</p>
+      )}
     </Container>
   );
 };

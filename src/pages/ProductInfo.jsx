@@ -126,10 +126,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Add, Remove } from "@material-ui/icons";
+import { useParams } from 'react-router-dom';
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import NewsLetter from "../components/NewsLetter";
+import {useState,useEffect} from 'react'
 
 // Container to wrap the entire product page
 const Container = styled.div`
@@ -293,7 +295,27 @@ const Heading = styled.header`
     margin-top:8%;
 `;
 
-const Product = ({ product }) => {
+const ProductInfo = () => {
+  const { id } = useParams();  // Get the product ID from the URL
+  const [product, setProduct] = useState(null);  // State for a single product
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/products/details/${id}`)  // Fetch the product by ID from the backend
+      .then(response => response.json())
+      .then(data => {
+        if (data) {
+          setProduct(data);  // Set the fetched product to state
+        } else {
+          console.error('No product found with this ID:', id);
+        }
+      })
+      .catch(error => console.error('Error fetching product:', error));
+  }, [id]);
+
+  if (!product) {
+    return <p>Loading...</p>;  // Show loading state while fetching
+  }
+  
   return (
     <Container>
       <Navbar />
@@ -306,9 +328,9 @@ const Product = ({ product }) => {
           <Image src="https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png" />
         </ImgContainer>
         <InfoContainer>
-          <Title>Tilapia</Title>
-          <Desc>Plenty quantityaavaiklabel frseeeee</Desc>
-          <Price>$ 330</Price>
+        <Title>{product.name}</Title>
+          <Desc>{product.description}</Desc>
+          <Price>${product.price}</Price>
       
           <AddContainer>
             <AmountContainer>
@@ -326,4 +348,4 @@ const Product = ({ product }) => {
   );
 };
 
-export default Product;
+export default ProductInfo;

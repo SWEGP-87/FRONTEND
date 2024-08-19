@@ -60,7 +60,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Outlet } from 'react-router-dom';
 import ProductList from "./pages/ProductList";
 import Home from './pages/Home';
-import Products from "./pages/ProductInfo";
+import ProductInfo from "./pages/ProductInfo";
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Cart from "./pages/Cart";
@@ -79,10 +79,13 @@ function App() {
         <Route path="/" element={<WithNavbar />}>
           <Route index element={<LandingPage />} />
           <Route path="/HomeIN" element={<Home />} />
+          
+          
         
           <Route path="Cart" element={<Cart />} />
           <Route path="TrainingPage" element={<TrainingPage />} />
           <Route path="ProductList" element={<ProductList />} />
+          <Route path="product/:id" element={<ProductInfo />} />
           <Route path="ServicePage" element={<ServicePage />} />
           <Route path="FAQPage" element={<FAQPage />} />
           <Route path="ContactPage" element={<ContactPage />} />
