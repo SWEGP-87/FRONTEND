@@ -261,6 +261,7 @@ const Login = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
 
   const navigate = useNavigate();
@@ -270,6 +271,8 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
+
     try {
       const response = await axios.post('http://localhost:3000/login', {
         name,
@@ -287,10 +290,17 @@ const Login = () => {
         console.error('Error logging in:', response.data.message);
       }
 
-    } catch (error) {
-      console.error('Error:', error.response ? error.response.data : error.message);
-    }
-  };
+    }  catch (error) {
+      if (error.response && error.response.status === 400) {
+        // Display the error message from the backend
+        console.error('Login error:', error.response.data.message);
+        setError(error.response.data.message); // Display the error message in your UI
+      } else {
+        // Handle unexpected errors
+        console.error('Error:', error.response ? error.response.data : error.message);
+        setError('Something went wrong. Please try again later.'); // Generic error message
+      }
+  }};
 
   return (
     <Container>
@@ -329,6 +339,7 @@ const Login = () => {
           <LinkStyled to="/register">
             Don't have an account? <RegisterText>Register</RegisterText>
           </LinkStyled>
+          {error && <p style={{ color: 'white' }}>{error}</p>} 
         </Form>
       </Wrapper>
     </Container>
