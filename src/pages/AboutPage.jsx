@@ -70,7 +70,7 @@
 import React from 'react';
 import './About.css';  // Importing a CSS file for styling
 import image2 from '../assets/Serwaa.jpg';  // Example image for the left side
-import clientImage from '../assets/Ediprofile.png';  // Replace with the path to the client picture
+import clientImage from '../Videos/Mr.Botwe.jpg';  // Replace with the path to the client picture
 import Footer from '../components/Footer';
 
 const AboutPage = () => {

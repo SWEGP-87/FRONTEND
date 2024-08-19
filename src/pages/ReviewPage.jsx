@@ -4,26 +4,62 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Eddie from "../assets/Ediprofile.png"
+import Michael from "../Videos/Michael.jpg"
+import Michelle from "../Videos/Michelle.jpg"
+import Abigail from "../Videos/Abigail.jpg"
+import ChristyRita from "../Videos/ChristyRita.jpg"
+import Ruth from "../Videos/Ruth.jpg"
+import Asobaby from "../Videos/Asobaby.jpg"
 
 const reviews = [
   {
     id: 1,
-    name: "Mr.Edawrd",
-    profile: Eddie,
+    name: "Mr.Michael",
+    profile: Michael,
     remark: "This product is amazing! Highly recommend it to everyone.",
   },
   {
     id: 2,
-    name: "Jane Smith",
-    profile:Eddie,
+    name: "Ruth",
+    profile:Ruth,
     remark: "Really satisfied with the quality and performance.",
   },
   {
     id: 3,
-    name: "Mike Johnson",
+    name: "Edward",
     profile: Eddie,
     remark: "Exceeded my expectations! Will buy again.",
   },
+  {
+    id: 4,
+    name: " Michelle",
+    profile:  Michelle,
+    remark: "The quality of fish is top-notch! The farming practices are sustainable and efficient.",
+},
+{
+    id: 5,
+    name: "Christy and Rita",
+    profile: ChristyRita,
+    remark: "Excellent service and fresh fish every time. Highly recommend their farming methods!",
+},
+{
+    id: 6,
+    name: "Abigail",
+    profile: Abigail,
+    remark: "Great experience with this fish farming company. The fish are always healthy and of high quality.",
+},
+{
+    id: 7,
+    name: "Aso baby",
+    profile: Asobaby,
+    remark: "Outstanding! The fish are always fresh, and their farming practices are eco-friendly.",
+},
+// {
+//     id: 8,
+//     name: "Linda Martinez",
+//     profile: Linda,
+//     remark: "Impressive quality and excellent customer service. Their fish farming operation is top of the line.",
+// }
   // Add more reviews as needed
 ];
 

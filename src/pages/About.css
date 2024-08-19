@@ -1,23 +1,22 @@
-
-
-
+/* General Styles */
+body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
 
 .about-container {
   text-align: center;
-  padding: 0;  /* Removed padding */
+  padding: 0;
   font-family: Arial, sans-serif;
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: -40px;
-  margin-right: -40px;
+  margin: 0 auto; /* Center container */
+   width: 100%; /* Ensure container doesn't exceed viewport width */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  height:100%;
 }
 
 .top-video-container {
   position: relative;
   width: 100%;
-  height: 400px; /* Adjust height as needed */
+  height: 40vh; /* Use viewport height for responsiveness */
   overflow: hidden;
 }
 
@@ -41,112 +40,112 @@
   padding: 10px 20px;
   font-size: 2rem;
   font-weight: bold;
+  max-width: 90%; /* Ensure text container fits within the viewport */
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .headers1 {
-  margin-left: 300px;
-  margin-bottom: -90px;
+  margin: 20px auto;
 }
 
 .headers {
-  margin-top: 20px;
+  margin: 20px auto;
 }
 
 .about-text {
   text-align: center;
-  margin: 20px 40px;
+  margin: 20px 5%;
 }
 
 .profile-content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin: 20px 0;
+  margin: 20px 5%;
 }
 
 .client-image {
-  width: 40%;
-  max-width: 400px; /* Adjust based on image size */
+  width: 80%;
+  max-width: 300px; /* Adjusted for smaller screens */
   height: auto;
-  border-radius: 50%; /* Optional: if you want a circular image */
-  margin-right: 20px;
+  border-radius: 50%;
+  margin-bottom: 10px;
 }
 
 .profile-text {
-  flex: 1;
-  text-align: left;
-  margin-left: 20px;
+  text-align: center;
+  margin: 10px 5%;
 }
 
 .image-text-section {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  margin: 20px 0;
+  margin: 20px 5%;
 }
 
 .side-image {
-  width: 40%;
-  max-width: 800px;
-  margin-right: 50px;
-  margin-left: 20px;
-  width: 50%;
-  height: 500px;
+  width: 80%;
+  max-width: 500px; /* Adjusted for smaller screens */
+  height: auto;
+  margin-bottom: 10px;
 }
 
 .side-text {
-  flex: 1;
-  text-align: left;
-  margin-left: 20px;
+  text-align: center;
+  margin: 10px 5%;
 }
 
 .section {
   width: 100%;
-  padding: 40px 20px;
+  padding: 20px 5%;
   margin: 20px 0;
 }
 
 .about-company {
-  background-color: #c3ddf4; /* AliceBlue */
-  margin-top: -50px;
-  margin-bottom: -20px;
+  background-color: #c3ddf4;
 }
 
 .our-mission {
-  background-color: #f5f5dc; /* Beige */
+  background-color: #f5f5dc;
 }
 
 .our-crew {
-  background-color: #2a166f; /* MistyRose */
-  margin-top: -50px;
-  margin-bottom: -70px;
+  background-color: #2a166f;
   color: rgb(185, 175, 175);
 }
 
 .our-profile {
-  background-color: #d3ef8b; /* MistyRose */
-  margin-top: -30px;
-  margin-bottom: -40px;
+  background-color: #d3ef8b;
 }
 
-@media (max-width: 768px) {
+/* Media Queries */
+@media (min-width: 769px) {
   .profile-content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .client-image, .profile-text {
-    margin: 10px 0;
+    flex-direction: row;
   }
 
   .image-text-section {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-text {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+
+  .headers1, .headers {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+
+  .profile-content, .image-text-section {
     flex-direction: column;
     align-items: center;
   }
 
-  .side-image, .side-text {
-    margin: 10px 0;
+  .client-image, .side-image {
+    width: 100%;
+    max-width: none; /* Ensure images are responsive */
   }
 }

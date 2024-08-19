@@ -13,22 +13,22 @@ export const sliderItems = [
     {
       id: 1,
       img: serwaa,
-      title: "MANNALAND FARMS WELCOMES YOU BACK",
-      desc: "Great SALE",
+      title: "Welcome to Mannaland Farm",
+      desc: "Big Sale on Fish stocks & Farm Products!",
       bg: "f5fafd",
     },
     {
       id: 2,
       img: catfishfingerlings,
-      title: "GET ALL YOUR STOCKS HERE",
-      desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+      title: "Get All Your Fish & Farm Supplies Here! Both Smoke and Fresh Stock",
+      desc: "Upgrade Your Farm with Quality and Savings from MANNALAND FARMS!",
       bg: "fcf1ed",
     },
     {
       id: 3,
       img: Catfishs,
-      title: "WE ARE THE BEST IN OFFERING GOOD FARMING TRAINING",
-      desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+      title: "WE ARE THE BEST IN FARMING TRAINING!",
+      desc: "Master the Art of Farming with Our Expert Guidance.",
       bg: "fbf0f4",
     },
   ];

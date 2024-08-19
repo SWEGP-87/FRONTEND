@@ -22,22 +22,22 @@ import TilapiaBroodstock from "../Videos/TilapiaBroodstock.mp4";
 const PageContainer = styled.div`
   margin-top: 6%;
   padding: 20px;
-  background-color: #f5f5f5;
+  background-color: #079992;
   min-height: 100vh;
  
 
 
-  width: 100%;
-  height: 100%;
-  /* Add your background pattern here */
-  background: repeating-radial-gradient(circle, #000, #000 5px, transparent 6px);
-  background-size: 30px 30px;
+  // width: 100%;
+  // height: 100%;
+  // /* Add your background pattern here */
+  // background: repeating-radial-gradient(circle, #000, #000 5px, transparent 6px);
+  // background-size: 30px 30px;
 
 
 
-    @media (max-width: 768px) {
+   @media (max-width: 768px) {
     padding: 10px;
-    margin-top:15%;
+     margin-top:15%;
 `;
 
 const Title = styled.h1`

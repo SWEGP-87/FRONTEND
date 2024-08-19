@@ -14,11 +14,15 @@ import HatchTraining from "../Videos/HatchTraining.mp4"
 import TilapiaBroodstock from "../Videos/TilapiaBroodstock.mp4";
 
 const PageContainer = styled.div`
+  // padding: 20px;
+  // width: 100%;
+  // height: 100%;
+  // background: radial-gradient(circle at 50%, rgb(41, 39, 39), #333 50%, transparent 51%, #eee 10%, rgb(0, 0, 0) 55% 72%, rgb(15, 96, 189) 50%);
+  // background-size: 10px 10px;
+   margin-top: 6%;
   padding: 20px;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 50%, rgb(41, 39, 39), #333 50%, transparent 51%, #eee 10%, rgb(0, 0, 0) 55% 72%, rgb(15, 96, 189) 50%);
-  background-size: 10px 10px;
+  background-color: #cce7ff;
+  min-height: 100vh;
 `;
 
 const Header = styled.div`
@@ -50,6 +54,7 @@ const HeaderDescription = styled.p`
   font-size: 18px;
   max-width: 800px;
   margin: 0 auto;
+  font-weight:bold;
 
   @media (max-width: 768px) {
     font-size: 16px;

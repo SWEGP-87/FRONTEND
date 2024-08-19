@@ -23,12 +23,16 @@ import styled, { keyframes } from "styled-components";
 
 // Define the keyframes for the moving text animation
 const move = keyframes`
-  0% {
+  100% {
     transform: translateX(-100%);
   }
-  100% {
+  0% {
     transform: translateX(100%);
+  };
+
+  
   }
+
 `;
 
 const Container = styled.div`
@@ -56,7 +60,7 @@ const MovingText = styled.div`
 const Announcement = () => {
   return (
     <Container>
-      <MovingText>Super Deal! Free Shipping on Orders Over $50</MovingText>
+      <MovingText>Don’t Miss Out – Patronize Now and Enjoy Fantastic Savings!</MovingText>
     </Container>
   );
 };
