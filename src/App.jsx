@@ -78,9 +78,13 @@ function App() {
       <Routes>
         <Route path="/" element={<WithNavbar />}>
           <Route index element={<LandingPage />} />
+<<<<<<< HEAD
           <Route path="/HomeIN" element={<Home />} />
           
           
+=======
+          <Route path="HomeIN" element={<Home />} />
+>>>>>>> 3ed560154cf140c32736c8535cac3beb25ed209c
         
           <Route path="Cart" element={<Cart />} />
           <Route path="TrainingPage" element={<TrainingPage />} />
