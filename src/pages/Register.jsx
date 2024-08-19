@@ -172,7 +172,7 @@ const RememberMeCheckbox = styled.input`
 `;*/
 
 const PasswordError = styled.span`
-  color: red;
+  color: white;
   font-size: 14px;
   margin-top: 10px;
   text-align: left;
